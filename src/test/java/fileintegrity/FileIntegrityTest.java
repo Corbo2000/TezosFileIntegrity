@@ -14,22 +14,28 @@ public class FileIntegrityTest
     @Test
     public void testUploadFileHash() throws Exception
     {
-        TezosWallet wallet1 = new TezosWallet("cube security region mouse wash holiday rural pass pretty assist anxiety movie stay success zebra", 
-        "CorboPassphrase");
+        TezosWallet wallet1 = new TezosWallet("salon such fruit occur forest run cram fuel employ whisper danger decorate spend latin journey", 
+        "testWalletPass");
         wallet1.setProvider("https://rpc.ghostnet.teztnets.xyz");
-        String pathString = "G:\\FutureSenseCode\\fileintegrityartifactid\\FilesToHash";
+        String pathString = "C:\\GitHub Stuff\\TezosFileIntegrity\\FilesToHash";
+        String smartContractAddr = "KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH";
 
-        FileIntegrity.uploadFileHash(pathString, wallet1); // Goes through every file in File Directory pathString. Doesn't return anything
+        System.out.println("Starting File Upload:");
+        FileIntegrity.uploadFileHash(pathString, wallet1, smartContractAddr); // Goes through every file in File Directory pathString. Doesn't return anything
+        System.out.println("Upload Complete!");
     }
     @Test
     public void testVerifyFileHash() throws Exception
     {
-        TezosWallet wallet1 = new TezosWallet("cube security region mouse wash holiday rural pass pretty assist anxiety movie stay success zebra", 
-        "CorboPassphrase");
+        TezosWallet wallet1 = new TezosWallet("salon such fruit occur forest run cram fuel employ whisper danger decorate spend latin journey", 
+        "testWalletPass");
         wallet1.setProvider("https://rpc.ghostnet.teztnets.xyz");
-        String pathString = "G:\\FutureSenseCode\\fileintegrityartifactid\\FilesToHash";
+        String pathString = "C:\\GitHub Stuff\\TezosFileIntegrity\\FilesToHash";
+        String smartContractAddr = "KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH";
 
-        FileIntegrity.verifyFileHash(pathString, wallet1);
+        System.out.println("Starting File Verification:");
+        FileIntegrity.verifyFileHash(pathString, wallet1, smartContractAddr);
+        System.out.println("Verification Complete!");
     }
     @Test
     public void createTezosWallet() throws Exception

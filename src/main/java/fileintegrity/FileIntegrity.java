@@ -8,7 +8,6 @@ import java.io.*;
 import java.math.BigDecimal;
 import org.json.JSONObject;
 
-import milfont.com.tezosj.domain.Crypto;
 import milfont.com.tezosj.helper.Global;
 import milfont.com.tezosj.model.TezosWallet;
 
@@ -46,7 +45,7 @@ public class FileIntegrity {
       return sb.toString();
    }
 
-   public static void verifyFileHash(String path, TezosWallet wallet) throws NoSuchAlgorithmException, IOException, Exception{
+   public static void verifyFileHash(String path, TezosWallet wallet, String SmartContractAddr) throws NoSuchAlgorithmException, IOException, Exception{
 
     MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
@@ -57,7 +56,7 @@ public class FileIntegrity {
     for ( File f : list ) {
         if ( f.isDirectory() ) {
             System.out.println( "Dir:" + f.getAbsoluteFile() );
-            verifyFileHash( f.getAbsolutePath() , wallet);
+            verifyFileHash( f.getAbsolutePath() , wallet, SmartContractAddr);
         }
         else {
             //System.out.println( "File:" + f.getName() );
@@ -65,13 +64,13 @@ public class FileIntegrity {
             BigDecimal amount = new BigDecimal("0");
             BigDecimal fee = new BigDecimal("0.1");
             // This Entry Point just needs the right Contract Address
-            JSONObject jsonObject = wallet.callContractEntryPoint(wallet.getPublicKeyHash(), "KT1BaBwc7XnLULgK9VndxFmKrLsTfes9oPki", amount,
+            JSONObject jsonObject = wallet.callContractEntryPoint(wallet.getPublicKeyHash(), SmartContractAddr, amount,
                                                                     fee, "", "", "fileCheck",
                                                                     new String[]{f.getName(), calculateHash(digest, f.getAbsoluteFile())},
                                                                     false, Global.GENERIC_STANDARD);
             String opHash = (String) jsonObject.get("result");
             while(opHash.length() != 54){
-              jsonObject = wallet.callContractEntryPoint(wallet.getPublicKeyHash(), "KT1BaBwc7XnLULgK9VndxFmKrLsTfes9oPki", amount,
+              jsonObject = wallet.callContractEntryPoint(wallet.getPublicKeyHash(), SmartContractAddr, amount,
                                                                     fee, "", "", "fileCheck",
                                                                     new String[]{f.getName(), calculateHash(digest, f.getAbsoluteFile())}, false, Global.GENERIC_STANDARD);
               opHash = (String) jsonObject.get("result");
@@ -82,7 +81,7 @@ public class FileIntegrity {
     }
  }
 
-   public static void uploadFileHash(String path, TezosWallet wallet) throws NoSuchAlgorithmException, IOException, Exception{
+   public static void uploadFileHash(String path, TezosWallet wallet, String SmartContractAddr) throws NoSuchAlgorithmException, IOException, Exception{
 
       MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
@@ -93,7 +92,7 @@ public class FileIntegrity {
       for ( File f : list ) {
           if ( f.isDirectory() ) {
               System.out.println( "Dir:" + f.getAbsoluteFile() );
-              uploadFileHash( f.getAbsolutePath() , wallet);
+              uploadFileHash( f.getAbsolutePath() , wallet, SmartContractAddr);
           }
           else {
               //System.out.println( "File:" + f.getName() );
@@ -101,13 +100,13 @@ public class FileIntegrity {
               BigDecimal amount = new BigDecimal("0");
               BigDecimal fee = new BigDecimal("0.1");
               // This Entry Point just needs the right Contract Address
-              JSONObject jsonObject = wallet.callContractEntryPoint(wallet.getPublicKeyHash(), "KT1BaBwc7XnLULgK9VndxFmKrLsTfes9oPki", amount,
+              JSONObject jsonObject = wallet.callContractEntryPoint(wallet.getPublicKeyHash(), SmartContractAddr, amount,
                                                                       fee, "", "", "certify",
                                                                       new String[]{f.getName(), calculateHash(digest, f.getAbsoluteFile())}, 
                                                                       false, Global.GENERIC_STANDARD);
               String opHash = (String) jsonObject.get("result");
               while(opHash.length() != 54){
-                jsonObject = wallet.callContractEntryPoint(wallet.getPublicKeyHash(), "KT1BaBwc7XnLULgK9VndxFmKrLsTfes9oPki", amount,
+                jsonObject = wallet.callContractEntryPoint(wallet.getPublicKeyHash(), SmartContractAddr, amount,
                                                                       fee, "", "", "certify",
                                                                       new String[]{f.getName(), calculateHash(digest, f.getAbsoluteFile())},
                                                                        false, Global.GENERIC_STANDARD);
