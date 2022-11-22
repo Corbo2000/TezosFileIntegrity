@@ -28,5 +28,6 @@ This test method creates a tezos wallet on the ghostnet testnet. It then display
 
 ## Complete Walkthrough
 
-This operations document can be used as a walkthrough: https://docs.google.com/document/d/1QE5z_H8o5s8vDtnJTXsKfIWy0po-WxsDUhqk7nwe8Zk/edit?usp=sharing.
-It shows how to create a wallet, deploy the smart contract, & call the contract using this github repo. 
+<p>This operations document can be used as a walkthrough: https://docs.google.com/document/d/1QE5z_H8o5s8vDtnJTXsKfIWy0po-WxsDUhqk7nwe8Zk/edit?usp=sharing.<br>
+It shows how to create a wallet, deploy the smart contract, & call the contract with Java.</p> 
+<p>This Better Call Dev link shows the operations of the smart contract used in the walkthrough: https://better-call.dev/ghostnet/KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH/operations. </p>
