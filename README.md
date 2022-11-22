@@ -14,7 +14,7 @@ This Github repo contains the java code necessary to invoke a tezos smart contra
 
 ## SmartPy Smart Contract
 
-The SmartPy Smart Contract is linked under '\smartcontract\FileIntegrity.py'. This python script can be uploaded and deployed using SmartPy.io/ide. Alternatively you can use this bitly link to import the smart contract code: <https://bit.ly/3Md4AHN>.
+The SmartPy Smart Contract is linked under '\smartcontract\FileIntegrity.py'. This python script can be uploaded and deployed using SmartPy.io/ide. Alternatively you can use this bitly link to import the smart contract code: https://bit.ly/3Md4AHN.
 
 ## Test Methods
 
@@ -26,13 +26,13 @@ The SmartPy Smart Contract is linked under '\smartcontract\FileIntegrity.py'. Th
 
 ## Complete Walkthrough
 
-<p>This operations document can be used as a walkthrough: <https://docs.google.com/document/d/1QE5z_H8o5s8vDtnJTXsKfIWy0po-WxsDUhqk7nwe8Zk/edit?usp=sharing>.<br>
+<p>This operations document can be used as a walkthrough: https://docs.google.com/document/d/1QE5z_H8o5s8vDtnJTXsKfIWy0po-WxsDUhqk7nwe8Zk/edit?usp=sharing.<br>
 It shows how to create a wallet, deploy the smart contract, & call the contract with Java.</p> 
-<p>This Better Call Dev link shows the operations of the smart contract used in the walkthrough: <br><https://better-call.dev/ghostnet/KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH/operations>. </p>
+<p>This Better Call Dev link shows the operations of the smart contract used in the walkthrough: <br>https://better-call.dev/ghostnet/KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH/operations. </p>
 
 ## Credits
 
-TezosFileIntegrity uses TezosJ_plainJava <https://github.com/TezosRio/TezosJ_plainJava> (Version - 1.4.1)<br>
+TezosFileIntegrity uses TezosJ_plainJava https://github.com/TezosRio/TezosJ_plainJava (Version - 1.4.1)<br>
 The .jar file for this repo is located under '\src\repo\tezosj-sdk-plain-java-1.4.1.jar.
 
 ## License
