@@ -39,4 +39,4 @@ It shows how to create a wallet, deploy the smart contract, & call the contract 
 
 ## License
 
-The TezosJ SDK library is available under the MIT License. Check out the license file for more information.
+Tezos File Integrity is available under the MIT License. Check out the license file for more information.
