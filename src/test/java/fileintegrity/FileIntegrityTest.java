@@ -14,10 +14,12 @@ public class FileIntegrityTest
     @Test
     public void testUploadFileHash() throws Exception
     {
+        // 
         TezosWallet wallet1 = new TezosWallet("salon such fruit occur forest run cram fuel employ whisper danger decorate spend latin journey", 
         "testWalletPass");
         wallet1.setProvider("https://rpc.ghostnet.teztnets.xyz");
-        String pathString = "C:\\GitHub Stuff\\TezosFileIntegrity\\FilesToHash";
+        String rootDir = System.getProperty("user.dir");
+        String pathString = rootDir + "\\src\\test\\resources\\FilesToHash";
         String smartContractAddr = "KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH";
 
         System.out.println("Starting File Upload:");
@@ -30,7 +32,8 @@ public class FileIntegrityTest
         TezosWallet wallet1 = new TezosWallet("salon such fruit occur forest run cram fuel employ whisper danger decorate spend latin journey", 
         "testWalletPass");
         wallet1.setProvider("https://rpc.ghostnet.teztnets.xyz");
-        String pathString = "C:\\GitHub Stuff\\TezosFileIntegrity\\FilesToHash";
+        String rootDir = System.getProperty("user.dir");
+        String pathString = rootDir + "\\src\\test\\resources\\FilesToHash";
         String smartContractAddr = "KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH";
 
         System.out.println("Starting File Verification:");

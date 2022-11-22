@@ -37,7 +37,7 @@
       <artifactId>TezosJ_plainJava</artifactId>
       <version>1.4.1</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/src/main/resources/tezosj-sdk-plain-java-1.4.1.jar</systemPath>
+      <systemPath>${project.basedir}/src/repo/tezosj-sdk-plain-java-1.4.1.jar</systemPath>
     </dependency>
   </dependencies>
 
