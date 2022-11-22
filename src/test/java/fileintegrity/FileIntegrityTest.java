@@ -8,9 +8,8 @@ import milfont.com.tezosj.model.TezosWallet;
  */
 public class FileIntegrityTest 
 {
-    /**
-     * Rigorous Test 
-     */
+    
+    //Upload All Files Contained in FilesToHash Folder
     @Test
     public void testUploadFileHash() throws Exception
     {
@@ -26,6 +25,8 @@ public class FileIntegrityTest
         FileIntegrity.uploadFileHash(pathString, wallet1, smartContractAddr); // Goes through every file in File Directory pathString. Doesn't return anything
         System.out.println("Upload Complete!");
     }
+
+    //Verify All Files Contained in FilesToHash Folder
     @Test
     public void testVerifyFileHash() throws Exception
     {
@@ -40,6 +41,8 @@ public class FileIntegrityTest
         FileIntegrity.verifyFileHash(pathString, wallet1, smartContractAddr);
         System.out.println("Verification Complete!");
     }
+
+    //Create Tezos Wallet & Display Mnemonic Words / Public Key Hash
     @Test
     public void createTezosWallet() throws Exception
     {

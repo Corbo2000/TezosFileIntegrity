@@ -49,18 +49,20 @@ public class FileIntegrity {
 
     MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
+    // Get root of Path & Create list of files
     File root = new File( path );
     File[] list = root.listFiles();
 
     if (list == null) return;
+    // For every file in list
     for ( File f : list ) {
+        // If there is folder in directory, recursively call verifyFileHash
         if ( f.isDirectory() ) {
             System.out.println( "Dir:" + f.getAbsoluteFile() );
             verifyFileHash( f.getAbsolutePath() , wallet, SmartContractAddr);
         }
+        // Otherwise verify files on Tezos blockchain using fileCheck entry point
         else {
-            //System.out.println( "File:" + f.getName() );
-
             BigDecimal amount = new BigDecimal("0");
             BigDecimal fee = new BigDecimal("0.1");
             // This Entry Point just needs the right Contract Address
@@ -95,8 +97,6 @@ public class FileIntegrity {
               uploadFileHash( f.getAbsolutePath() , wallet, SmartContractAddr);
           }
           else {
-              //System.out.println( "File:" + f.getName() );
-
               BigDecimal amount = new BigDecimal("0");
               BigDecimal fee = new BigDecimal("0.1");
               // This Entry Point just needs the right Contract Address
@@ -120,13 +120,14 @@ public class FileIntegrity {
 
    public static void main(String[] args) throws Exception
    {
-    // This is Wallet 1 on the Ghostnet Testnet
-    // TezosWallet wallet1 = new TezosWallet("cube security region mouse wash holiday rural pass pretty assist anxiety movie stay success zebra", 
-    //                         "CorboPassphrase");
+    // TezosWallet wallet1 = new TezosWallet("salon such fruit occur forest run cram fuel employ whisper danger decorate spend latin journey", 
+    // "testWalletPass");
     // wallet1.setProvider("https://rpc.ghostnet.teztnets.xyz");
-    // String pathString = "G:\\FutureSenseCode\\fileintegrityartifactid\\FilesToHash";
+    // String rootDir = System.getProperty("user.dir");
+    // String pathString = rootDir + "\\src\\test\\resources\\FilesToHash";
+    // String smartContractAddr = "KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH";
 
-    //uploadFileHash(pathString, wallet1); // Goes through every file in File Directory pathString. Doesn't return anything
-    //verifyFileHash(pathString, wallet1);
+    //uploadFileHash(pathString, wallet1, smartContractAddr); // Upload All Files Contained in FilesToHash
+    //verifyFileHash(pathString, wallet1, smartContractAddr); // Verify All Files Contained in FilesToHash
    }
 }
