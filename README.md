@@ -26,7 +26,7 @@ The SmartPy Smart Contract is linked under '\smartcontract\FileIntegrity.py'. Th
 
 ## Complete Walkthrough
 
-<p>This operations document can be used as a walkthrough: https://docs.google.com/document/d/1QE5z_H8o5s8vDtnJTXsKfIWy0po-WxsDUhqk7nwe8Zk/edit?usp=sharing.<br>
+<p>The operations document located under '\docs\TezosFileIntegrityOperations.docx' can be used as a walkthrough.<br>
 It shows how to create a wallet, deploy the smart contract, & call the contract with Java.</p> 
 <p>This Better Call Dev link shows the operations of the smart contract used in the walkthrough: <br>https://better-call.dev/ghostnet/KT1W8oxKcTdzpEQQHQodnDifta1jfHBq5eSH/operations. </p>
 
